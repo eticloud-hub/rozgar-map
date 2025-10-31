@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "Rozgar Map",
+    "tagline": "Understand MGNREGA in Your District",
+    "description": "Visual Employment Data for Rural India"
+  },
+  "home": {
+    "welcome": "Welcome to Rozgar Map",
+    "selectDistrict": "Select Your District",
+    "selectState": "Choose State",
+    "selectDistrictDropdown": "Choose District",
+    "viewDashboard": "View Dashboard",
+    "summary": "District Summary",
+    "noSelection": "Please select a district to continue",
+    "helpText": "Rozgar Map helps you understand employment data in your district"
+  },
+  "dashboard": {
+    "title": "District Performance",
+    "familiesEmployed": "Families Employed",
+    "personDays": "Total Person Days",
+    "expenditure": "Total Expenditure",
+    "wagesPaid": "Wages Paid",
+    "assetsCreated": "Assets Created",
+    "monthlyTrend": "12-Month Trend",
+    "comparison": "Compare Districts",
+    "loading": "Loading dashboard data...",
+    "error": "Could not load dashboard",
+    "noData": "No data available for this district"
+  },
+  "metrics": {
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "improvement": "Improvement",
+    "decline": "Decline",
+    "stable": "Stable",
+    "percentage": "Percentage Change"
+  },
+  "units": {
+    "families": "families",
+    "days": "days",
+    "rupees": "₹",
+    "works": "works",
+    "crores": "Crores"
+  },
+  "audio": {
+    "narrate": "Speak 🔊",
+    "stop": "Stop",
+    "readThis": "Read this aloud"
+  },
+  "common": {
+    "loading": "Loading...",
+    "back": "Back",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "close": "Close",
+    "home": "Home",
+    "noResults": "No results found"
+  },
+  "comparison": {
+    "title": "Compare Districts",
+    "selectFirst": "Select First District",
+    "selectSecond": "Select Second District",
+    "swap": "Swap Districts",
+    "reset": "Reset Comparison",
+    "noData": "No data available for comparison",
+    "workforce": "Workforce",
+    "projects": "Projects",
+    "budget": "Budget",
+    "efficiency": "Efficiency"
+  },
+  "about": {
+    "title": "About Rozgar Map",
+    "description": "Rozgar Map helps Indian citizens understand employment data under the MGNREGA program.",
+    "purposeText": "This platform visualizes government MGNREGA data in a simple, accessible way for rural users.",
+    "ministry": "Ministry of Rural Development, Government of India",
+    "dataSource": "Data Source",
+    "contact": "Contact Us",
+    "version": "Version",
+    "mission": "Our Mission",
+    "missionText": "To make rural employment data accessible and understandable to every Indian citizen",
+    "features": "Features"
+  }
+}

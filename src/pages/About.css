@@ -1,0 +1,164 @@
+.about-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: calc(100vh - 80px);
+  padding: 40px 20px;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-header {
+  margin-bottom: 40px;
+}
+
+.about-header .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+
+.about-header .back-link:hover {
+  color: #764ba2;
+  transform: translateX(-4px);
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.about-content {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section:last-child {
+  margin-bottom: 0;
+}
+
+.about-section h2 {
+  font-size: 22px;
+  color: #667eea;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.about-section p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 0 15px 0;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+.about-section a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.about-section a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 12px 0;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+.about-contact {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.about-footer-text {
+  text-align: center;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+  margin: 0 0 15px 0;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 20px 15px;
+  }
+
+  .about-container {
+    max-width: 100%;
+  }
+
+  .about-header h1 {
+    font-size: 24px;
+  }
+
+  .about-content {
+    padding: 24px;
+  }
+
+  .about-section {
+    margin-bottom: 30px;
+  }
+
+  .about-section h2 {
+    font-size: 18px;
+  }
+
+  .about-section p {
+    font-size: 14px;
+  }
+}

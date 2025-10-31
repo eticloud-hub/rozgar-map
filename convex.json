@@ -1,0 +1,4 @@
+{
+  "crons": "convex/crons.ts",
+  "http": "convex/http.ts"
+}
