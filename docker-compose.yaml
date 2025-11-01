@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      CORS_ORIGIN: http://localhost:5173
+      DATA_GOV_API_KEY: dummy-key
+      ADMIN_TOKEN: dev-token-change-in-prod
+      LOG_LEVEL: info
+      ENABLE_SCHEDULER: "true"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    restart: unless-stopped
+    networks:
+      - rozgar
+
+networks:
+  rozgar:
+    driver: bridge
