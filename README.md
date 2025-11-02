@@ -1,73 +1,240 @@
-# React + TypeScript + Vite
+# 🗺️ Rozgar Map
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A comprehensive platform for tracking MGNREGA employment data across Indian districts with real-time analytics and geolocation services.**
 
-Currently, two official plugins are available:
+[![GitHub](https://img.shields.io/badge/GitHub-eticloud%2Frozgar--map-blue?logo=github)](https://github.com/eticloud-hub/rozgar-map)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Table of Contents
 
-## React Compiler
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [API Endpoints](#api-endpoints)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 📌 About
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Rozgar Map is a full-stack application that visualizes MGNREGA (Mahatma Gandhi National Rural Employment Guarantee Act) employment data across Maharashtra districts. It provides real-time metrics, geolocation-based district identification, and automated ETL pipelines to fetch government data.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Live Demo:**
+- Frontend: `https://your-frontend-url.railway.app`
+- Backend API: `https://your-backend-url.railway.app`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🌍 **District-based Analytics** - View employment metrics by district
+- 📊 **Real-time Dashboard** - Live updating metrics and performance indicators
+- 🎯 **Geolocation Services** - GPS and IP-based district detection
+- 🔄 **Automated ETL Pipeline** - Daily MGNREGA data synchronization
+- 🌐 **Multi-language Support** - Hindi & English interfaces
+- 📱 **Responsive Design** - Mobile-friendly interface
+- 🚀 **Production Ready** - Fully containerized with Docker
+- 💰 **100% Free** - Deployed on free tier infrastructure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend
+- **React 18** + TypeScript
+- **Vite** - Ultra-fast build tool
+- **TailwindCSS** - Utility-first styling
+- **React Router** - Client-side routing
+- **i18n** - Internationalization
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Backend
+- **Node.js** + Express.js
+- **SQLite** - Lightweight database
+- **Axios** - HTTP client for data fetching
+- **Node-cron** - Task scheduling (ETL)
+- **Helmet** - Security headers
+
+### Infrastructure
+- **Railway.app** - Cloud deployment (FREE tier)
+- **Docker** - Containerization
+- **GitHub** - Version control
+
+### APIs
+- **data.gov.in** - MGNREGA official data source
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 20+
+- npm or yarn
+- Git
+
+### Installation
+
+#### 1. Clone Repository
+
+git clone https://github.com/eticloud-hub/rozgar-map.git
+cd rozgar-map
+
+#### 2. Install Dependencies
+
+**Frontend:**
+
+npm install
+
+**Backend:**
+
+cd backend
+npm install
+cd ..
+
+
+#### 3. Environment Setup
+
+Create `.env` file in root:
+
+VITE_API_URL=http://localhost:3000
+
+Create `backend/.env`:
+
+NODE_ENV=development
+PORT=3000
+CORS_ORIGIN=http://localhost:5173
+DATA_GOV_API_KEY=your_api_key
+ENABLE_SCHEDULER=true
+
+#### 4. Run Locally
+
+**Frontend (Terminal 1):**
+
+npm run dev
+Opens at http://localhost:5173
+
+**Backend (Terminal 2):**
+
+cd backend
+npm start
+Runs at http://localhost:3000
+
+
+## 📂 Project Structure
+
+rozgar-map/
+├── src/ # Frontend (React)
+│ ├── pages/
+│ │ ├── Home.tsx
+│ │ ├── DistrictDashboard.tsx
+│ │ └── ComparisonView.tsx
+│ ├── components/
+│ ├── hooks/
+│ ├── utils/
+│ └── App.tsx
+│
+├── backend/ # Backend (Node.js)
+│ ├── src/
+│ │ ├── app.js # Main app
+│ │ ├── config/ # Database, cache config
+│ │ ├── routes/ # API endpoints
+│ │ ├── middleware/ # Auth, validation
+│ │ ├── services/ # Business logic
+│ │ │ └── etl/ # ETL pipeline
+│ │ └── utils/ # Helpers
+│ ├── package.json
+│ └── .env
+│
+├── data/ # SQLite database
+├── Dockerfile
+├── docker-compose.yml
+├── .env.example
+└── package.json
+
+
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/health` | Health check |
+| GET | `/api/v1/districts` | List all districts |
+| GET | `/api/v1/districts/:id` | Get district details |
+| GET | `/api/v1/districts/:id/summary` | Latest metrics |
+| GET | `/api/v1/districts/:id/timeseries` | Historical data |
+| POST | `/api/v1/report` | Submit citizen report |
+| GET | `/api/v1/admin` | Admin dashboard |
+
+## 🔑 Environment Variables
+
+### Backend
+
+NODE_ENV=production # development, production
+PORT=3000 # API port
+LOG_LEVEL=info # debug, info, warn, error
+CORS_ORIGIN= # Frontend URL for CORS
+DATA_GOV_API_KEY= # data.gov.in API key
+ADMIN_TOKEN= # Admin authentication
+ENABLE_SCHEDULER=true # Enable ETL scheduler
+
+## 🌐 Deployment
+
+### Deploy to Railway (FREE)
+
+1. **Push to GitHub**
+
+git push origin main
+
+2. **Connect Railway**
+   - Go to https://railway.app
+   - Sign in with GitHub
+   - Create new project from repo
+   - Railway auto-deploys!
+
+3. **Get Live URLs**
+   - Frontend: Check Railway dashboard
+   - Backend: Copy public domain URL
+
+4. **Connect Frontend to Backend**
+   - Update `VITE_API_URL` in production
+
+---
+
+## 📊 Performance Metrics
+
+- **Frontend Bundle:** ~676 KB (gzipped: ~206 KB)
+- **API Response:** < 200ms
+- **Database:** SQLite (0 MB at startup)
+- **Deployment Time:** ~3 minutes
+- **Monthly Cost:** $0 (FREE tier)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how:
+
+1. Fork the repo
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@eticloud-hub](https://github.com/eticloud-hub)
+- Email: your-email@example.com
+
+---
+
+## 🙏 Acknowledgments
+
+- **data.gov.in** - MGNREGA data source
+- **Railway.app** - Free hosting platform
+- **React & Node.js communities** - Open source tools
